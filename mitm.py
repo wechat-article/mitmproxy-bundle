@@ -8,7 +8,7 @@ def main():
     parser.add_argument('-f', '--file', type=str, help='Path to the credentials.json.')
     args = parser.parse_args()
 
-    command = ["-p", args.port]
+    command = ["-q", "-p", args.port]
     if args.script:
         command.extend(["-s", args.script])
     if args.file:
