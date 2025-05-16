@@ -30,8 +30,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          if exist requirements.txt (pip install -r requirements.txt)
+          if (Test-Path requirements.txt) { pip install -r requirements.txt }
           pip install pyinstaller
+        shell: pwsh # 明确使用 PowerShell
 
       # 运行 PyInstaller 打包
       - name: Build executable
